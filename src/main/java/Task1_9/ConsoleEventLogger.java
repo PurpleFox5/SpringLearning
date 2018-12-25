@@ -1,4 +1,4 @@
-package Task1_8;
+package Task1_9;
 
 public class ConsoleEventLogger implements EventLogger {
 

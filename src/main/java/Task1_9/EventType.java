@@ -1,4 +1,4 @@
-package Task1_8;
+package Task1_9;
 
 public enum EventType {
     INFO, ERROR

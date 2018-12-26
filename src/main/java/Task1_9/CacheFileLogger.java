@@ -1,11 +1,15 @@
 package Task1_9;
 
+import org.springframework.stereotype.Component;
+
+import javax.annotation.PreDestroy;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
 import static org.apache.commons.io.FileUtils.writeLines;
 
+@Component("cacheFileLogger")
 public class CacheFileLogger extends FileEventLogger {
 
     private int cacheSize;
@@ -25,6 +29,7 @@ public class CacheFileLogger extends FileEventLogger {
         }
     }
 
+    @PreDestroy
     public void destroy() throws IOException {
         if (!cache.isEmpty()) {
             writeLines(file, cache, true);
